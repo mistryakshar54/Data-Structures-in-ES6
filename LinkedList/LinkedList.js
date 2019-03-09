@@ -7,6 +7,25 @@ class LinkedListNode
         this.next = next;
     }
 }
+
+/**
+ * Linked List Class.
+ *
+ * @function {insertNode}
+ *   Inserts a new node in the linked list
+ * @function {appendNode}
+ *   Creates a new node and adds it to front of the linked list
+ * @function {deleteNode}
+ *   Removes a node from the end of the linked list
+ * @function {deleteFromFront}
+ *   Removes a node from the front of the linked list
+ * @function {traverseLinkedList}
+ *   Traverses the linked list listing all the elements in the list
+ * @prop {head} attach
+ *   Points to the head of the list.
+ * @prop {tail} detach
+ *   Points to the tail of the list.
+ */
 class LinkedList
 {
     constructor()
