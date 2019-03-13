@@ -1,0 +1,33 @@
+{
+  "name": "data-structures-in-es6",
+  "version": "1.0.0",
+  "description": "Different types of Data Structures created using ES6",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-new": "^0.4.3"
+  },
+  "babel": {
+    "presets": [
+      "new"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel Stack --out-dir .compiled --source-maps --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistryakshar54/Data-Structures-in-ES6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mistryakshar54/Data-Structures-in-ES6/issues"
+  },
+  "homepage": "https://github.com/mistryakshar54/Data-Structures-in-ES6#readme"
+}
