@@ -18,6 +18,26 @@ class SearchingAndSorting
         return inputArr;
     }
 
+    recursiveBubbleSort( inputArr , arrSize )
+    {
+        if(arrSize == 1)
+        {
+            return ;
+        }
+        
+        for( let _i = 0; _i < arrSize - 1; _i++)
+        {
+            if( inputArr[ _i ] > inputArr[ _i + 1 ] )
+            {
+                var temp = inputArr[ _i ];
+                inputArr[ _i ] = inputArr[ _i+1 ];
+                inputArr[ _i+1 ] = temp;
+            }
+        }
+        this.recursiveBubbleSort( inputArr , arrSize - 1 );
+        return inputArr; //recursion needs to return the input arr after it is processed till end
+    }
+
     selectionSort( inputArr)
     {
         for( let _i = 0; _i < inputArr.length; _i++ )
@@ -58,8 +78,10 @@ class SearchingAndSorting
 }
 
 var bbSort = new SearchingAndSorting();
-console.log(bbSort.bubbleSort( [ 5 ,0 ,1 , 4 , 10 , 2] )); 
-
-console.log(bbSort.binarySearch( [ 1,4,6,8,9,10,44] , 0 , [ 1,4,6,8,9,10,44].length , 99 )); 
-
-console.log( "Selection Sort => " , bbSort.selectionSort( [ 64 , 22 , 54 , 10 ] ) );
+var arrToSort = [ 64 , 22 , 54 , 10 ];
+var binarySearchArr = [ 1,4,6,8,9,10,44];
+console.log(bbSort.bubbleSort( arrToSort )); 
+console.log("Binary Search for key 99 => " , bbSort.binarySearch( binarySearchArr , 0 , binarySearchArr.length , 99 )); 
+console.log("Binary Search for key 1 => " , bbSort.binarySearch( binarySearchArr , 0 , binarySearchArr.length , 9 )); 
+console.log( "Selection Sort => " , bbSort.selectionSort( arrToSort ) );
+console.log( "Recursive Bubble Sort => " , bbSort.recursiveBubbleSort( arrToSort , arrToSort.length  ) );
