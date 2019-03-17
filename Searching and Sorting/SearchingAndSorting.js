@@ -18,6 +18,30 @@ class SearchingAndSorting
         return inputArr;
     }
 
+    selectionSort( inputArr)
+    {
+        for( let _i = 0; _i < inputArr.length; _i++ )
+        {
+            let minindex = _i;
+            for( let _j = _i + 1; _j < inputArr.length; _j++ )
+            {
+                if( inputArr[_j] < inputArr[minindex] )
+                {
+                    minindex = _j;
+                }
+            }
+
+            if( minindex != _i )
+            {
+                var temp = inputArr[ minindex ];
+                inputArr[ minindex ] = inputArr[ _i ];
+                inputArr[ _i ] = temp;
+            }
+            
+        }
+        return inputArr;
+    }
+
     binarySearch( inputArr , low, high  , keyToSearch )
     {
         
@@ -37,3 +61,5 @@ var bbSort = new SearchingAndSorting();
 console.log(bbSort.bubbleSort( [ 5 ,0 ,1 , 4 , 10 , 2] )); 
 
 console.log(bbSort.binarySearch( [ 1,4,6,8,9,10,44] , 0 , [ 1,4,6,8,9,10,44].length , 99 )); 
+
+console.log( "Selection Sort => " , bbSort.selectionSort( [ 64 , 22 , 54 , 10 ] ) );
