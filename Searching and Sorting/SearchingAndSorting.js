@@ -62,6 +62,23 @@ class SearchingAndSorting
         return inputArr;
     }
 
+    insertionSort( inputArr )
+    {
+        for( let _i = 1; _i < inputArr.length - 1; _i++)
+        {
+            let key = inputArr[_i];
+            let j = _i - 1;
+
+            while( j >= 0 && inputArr[j] > key)
+            {
+                inputArr[ j + 1] = inputArr[j];
+                j--;
+            }
+            inputArr[j + 1] = key; 
+        }
+        return inputArr;
+    }
+
     binarySearch( inputArr , low, high  , keyToSearch )
     {
         
@@ -85,3 +102,5 @@ console.log("Binary Search for key 99 => " , bbSort.binarySearch( binarySearchAr
 console.log("Binary Search for key 1 => " , bbSort.binarySearch( binarySearchArr , 0 , binarySearchArr.length , 9 )); 
 console.log( "Selection Sort => " , bbSort.selectionSort( arrToSort ) );
 console.log( "Recursive Bubble Sort => " , bbSort.recursiveBubbleSort( arrToSort , arrToSort.length  ) );
+
+console.log( "Insertion Sort => " , bbSort.insertionSort(arrToSort) );
